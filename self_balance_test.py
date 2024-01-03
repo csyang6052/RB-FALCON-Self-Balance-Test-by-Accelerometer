@@ -61,7 +61,7 @@ while True:
     acc_x = int(1000*lsm.read_accel()[0])
     print(pressure, acc_z, acc_y, acc_x, UPP, PWM1, PWM2, PWM3, PWM4)
 
-    if UPP == 1 :
+    if UPP == 1 :  # Take-Off
         if acc_z > 970:
             PWM1 = round(PWM1, 2) + STEP
             PWM2 = round(PWM2, 2) + STEP
@@ -89,7 +89,7 @@ while True:
 
         if pressure < 760.6 or PWM1 > 45 or PWM2 > 45 or PWM3 > 45 or PWM4 > 45 : UPP = 0
 
-    elif UPP == 0 :
+    elif UPP == 0 :  # Landing
         if acc_z > 970:
             PWM1 = round(PWM1, 2) - STEP
             PWM2 = round(PWM2, 2) - STEP

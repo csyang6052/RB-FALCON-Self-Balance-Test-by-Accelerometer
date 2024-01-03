@@ -1,11 +1,8 @@
-from machine import Pin, I2C, SPI
-import usys
+from machine import Pin, I2C
 import machine
 import time
 from pyb import Timer
 from micropython import const
-import utime
-import ustruct as struct
 from bmp280 import BMP280
 from lsm9ds1 import LSM9DS1
 
